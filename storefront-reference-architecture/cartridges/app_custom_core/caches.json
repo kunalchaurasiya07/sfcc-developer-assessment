@@ -1,0 +1,8 @@
+{
+    "caches": [
+        {
+            "id": "deliveryPromiseTier",
+            "expireAfterSeconds": 1800
+        }
+    ]
+}

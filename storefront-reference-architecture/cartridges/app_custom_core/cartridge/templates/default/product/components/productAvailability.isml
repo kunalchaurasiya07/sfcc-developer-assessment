@@ -1,0 +1,9 @@
+<iscomment>Availability</iscomment>
+<div class="row availability product-availability" data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
+    <isinclude template="product/components/availability" />
+</div>
+
+<iscomment>Delivery promise block - only for the main product of the PDP (not set / bundle items)</iscomment>
+<isif condition="${pdict.deliveryPromise && pdict.deliveryPromise.enabled && pdict.product && product.id === pdict.product.id}">
+    <isinclude template="deliveryPromise/deliveryPromiseContainer" />
+</isif>

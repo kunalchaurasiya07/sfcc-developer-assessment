@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="DeliveryPromiseTier" object-id="NEXT_DAY">
+        <object-attribute attribute-id="contentAssetId">delivery-promise-next-day</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+    </custom-object>
+    <custom-object type-id="DeliveryPromiseTier" object-id="SAME_DAY">
+        <object-attribute attribute-id="contentAssetId">delivery-promise-same-day</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+    </custom-object>
+    <custom-object type-id="DeliveryPromiseTier" object-id="STANDARD">
+        <object-attribute attribute-id="contentAssetId">delivery-promise-standard</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+    </custom-object>
+</custom-objects>

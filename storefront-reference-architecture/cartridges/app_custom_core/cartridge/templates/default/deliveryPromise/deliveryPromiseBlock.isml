@@ -1,0 +1,46 @@
+<isset name="dp" value="${pdict.deliveryPromise}" scope="page" />
+
+<div class="delivery-promise__card${dp.imageUrl ? '' : ' delivery-promise__card--no-media'}"
+    data-tier="${dp.tier}"
+    data-accent="${dp.accentColor}">
+    <div class="delivery-promise__body">
+        <isif condition="${dp.icon}">
+            <span class="delivery-promise__icon" aria-hidden="true">
+                <i class="fa fa-${dp.icon}"></i>
+            </span>
+        </isif>
+
+        <isif condition="${dp.eyebrow}">
+            <p class="delivery-promise__eyebrow">${dp.eyebrow}</p>
+        </isif>
+
+        <isif condition="${dp.heading}">
+            <h2 class="delivery-promise__heading">${dp.heading}</h2>
+        </isif>
+
+        <isif condition="${dp.message}">
+            <p class="delivery-promise__message">${dp.message}</p>
+        </isif>
+
+        <isif condition="${dp.badgeText}">
+            <span class="delivery-promise__badge">
+                <isif condition="${dp.badgeIcon}">
+                    <i class="fa fa-${dp.badgeIcon}" aria-hidden="true"></i>
+                </isif>
+                ${dp.badgeText}
+            </span>
+        </isif>
+    </div>
+
+    <isif condition="${dp.imageUrl}">
+        <div class="delivery-promise__media">
+            <img class="delivery-promise__image"
+                src="${dp.imageUrl}"
+                alt="${dp.imageAlt}"
+                width="300"
+                height="240"
+                loading="lazy"
+                decoding="async" />
+        </div>
+    </isif>
+</div>

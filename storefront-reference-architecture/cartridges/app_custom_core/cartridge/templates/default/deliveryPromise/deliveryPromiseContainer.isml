@@ -1,0 +1,29 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/deliveryPromise.js');
+    assets.addCss('/css/deliveryPromise.css');
+</isscript>
+
+<isset name="deliveryPromiseConfig" value="${pdict.deliveryPromise}" scope="page" />
+
+<div class="row delivery-promise-row">
+    <div class="col-12">
+        <div class="delivery-promise js-delivery-promise"
+            role="region"
+            aria-label="${Resource.msg('label.deliverypromise.region', 'deliveryPromise', null)}"
+            aria-live="polite"
+            aria-busy="${deliveryPromiseConfig.eligible ? 'true' : 'false'}"
+            data-url="${deliveryPromiseConfig.url}"
+            data-timeout="${deliveryPromiseConfig.timeout}"
+            data-state="${deliveryPromiseConfig.eligible ? 'loading' : 'hidden'}">
+            <div class="delivery-promise__content js-delivery-promise-content">
+                <isif condition="${deliveryPromiseConfig.eligible}">
+                    <isinclude template="deliveryPromise/deliveryPromiseSkeleton" />
+                </isif>
+            </div>
+            <template class="js-delivery-promise-skeleton">
+                <isinclude template="deliveryPromise/deliveryPromiseSkeleton" />
+            </template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <!-- ============================================================ -->
+    <!-- Site preferences: feature flag and runtime configuration      -->
+    <!-- ============================================================ -->
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="deliveryPromiseEnabled">
+                <display-name xml:lang="x-default">Enable Delivery Promise on PDP</display-name>
+                <description xml:lang="x-default">Feature flag. When disabled no fulfilment calls are made and no markup, CSS, JS or font is added to the PDP.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryPromiseDefaultCountry">
+                <display-name xml:lang="x-default">Delivery Promise Default Country</display-name>
+                <description xml:lang="x-default">ISO 3166-1 alpha-2 country code used when the request locale has no country (e.g. "default" locale). Example: US</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>2</field-length>
+                <default-value>US</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryPromiseClientTimeout">
+                <display-name xml:lang="x-default">Delivery Promise Client Timeout (ms)</display-name>
+                <description xml:lang="x-default">Maximum time the browser waits for the delivery promise block before hiding it. Clamped to 1000-15000. Default 5000.</description>
+                <type>int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>5000</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="DeliveryPromise">
+                <display-name xml:lang="x-default">Delivery Promise</display-name>
+                <attribute attribute-id="deliveryPromiseEnabled"/>
+                <attribute attribute-id="deliveryPromiseDefaultCountry"/>
+                <attribute attribute-id="deliveryPromiseClientTimeout"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <!-- ============================================================ -->
+    <!-- Content asset attributes: business-managed tier content        -->
+    <!-- ============================================================ -->
+    <type-extension type-id="Content">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="dpEyebrow">
+                <display-name xml:lang="x-default">Delivery Promise: Eyebrow</display-name>
+                <description xml:lang="x-default">Small uppercase label shown above the heading, e.g. DELIVERY OPTION</description>
+                <type>string</type>
+                <localizable-flag>true</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>40</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpHeading">
+                <display-name xml:lang="x-default">Delivery Promise: Heading</display-name>
+                <description xml:lang="x-default">Main title, e.g. Same-day delivery</description>
+                <type>string</type>
+                <localizable-flag>true</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>60</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpMessage">
+                <display-name xml:lang="x-default">Delivery Promise: Message</display-name>
+                <description xml:lang="x-default">Supporting copy (plain text), e.g. Order before 4:00 PM to get it today</description>
+                <type>text</type>
+                <localizable-flag>true</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpBadgeText">
+                <display-name xml:lang="x-default">Delivery Promise: Badge Text</display-name>
+                <description xml:lang="x-default">Pill shown at the bottom of the block, e.g. Cut-off 4:00 PM. Leave empty to hide.</description>
+                <type>string</type>
+                <localizable-flag>true</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>40</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpIcon">
+                <display-name xml:lang="x-default">Delivery Promise: Icon</display-name>
+                <description xml:lang="x-default">Icon shown in the coloured tile. Leave empty to hide.</description>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition><display xml:lang="x-default">Lightning bolt</display><value>bolt</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Truck</display><value>truck</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Parcel / cube</display><value>cube</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Clock</display><value>clock-o</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Calendar</display><value>calendar</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Calendar check</display><value>calendar-check-o</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Shield</display><value>shield</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Rocket</display><value>rocket</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Map marker</display><value>map-marker</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Check circle</display><value>check-circle</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Info circle</display><value>info-circle</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Gift</display><value>gift</value></value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpBadgeIcon">
+                <display-name xml:lang="x-default">Delivery Promise: Badge Icon</display-name>
+                <description xml:lang="x-default">Icon shown inside the badge. Leave empty to hide.</description>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition><display xml:lang="x-default">Lightning bolt</display><value>bolt</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Truck</display><value>truck</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Parcel / cube</display><value>cube</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Clock</display><value>clock-o</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Calendar</display><value>calendar</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Calendar check</display><value>calendar-check-o</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Shield</display><value>shield</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Rocket</display><value>rocket</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Map marker</display><value>map-marker</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Check circle</display><value>check-circle</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Info circle</display><value>info-circle</value></value-definition>
+                    <value-definition><display xml:lang="x-default">Gift</display><value>gift</value></value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpImage">
+                <display-name xml:lang="x-default">Delivery Promise: Image</display-name>
+                <description xml:lang="x-default">Optional image shown on the right (top on mobile). Recommended 600x480 px, JPG/WebP.</description>
+                <type>image</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpImageAlt">
+                <display-name xml:lang="x-default">Delivery Promise: Image Alt Text</display-name>
+                <description xml:lang="x-default">Alternative text for the image. Leave empty if the image is purely decorative.</description>
+                <type>string</type>
+                <localizable-flag>true</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>120</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="dpAccentColor">
+                <display-name xml:lang="x-default">Delivery Promise: Accent Colour</display-name>
+                <description xml:lang="x-default">Hex colour for the icon tile, eyebrow and badge, e.g. #2e7d32. Leave empty for the tier default. Invalid values are ignored.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>7</field-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="DeliveryPromise">
+                <display-name xml:lang="x-default">Delivery Promise</display-name>
+                <attribute attribute-id="dpEyebrow"/>
+                <attribute attribute-id="dpHeading"/>
+                <attribute attribute-id="dpMessage"/>
+                <attribute attribute-id="dpBadgeText"/>
+                <attribute attribute-id="dpIcon"/>
+                <attribute attribute-id="dpBadgeIcon"/>
+                <attribute attribute-id="dpImage"/>
+                <attribute attribute-id="dpImageAlt"/>
+                <attribute attribute-id="dpAccentColor"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

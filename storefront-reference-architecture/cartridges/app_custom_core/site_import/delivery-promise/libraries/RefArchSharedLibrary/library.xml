@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+
+    <content content-id="delivery-promise-same-day">
+        <display-name xml:lang="x-default">Delivery Promise - SAME_DAY</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="dpAccentColor">#2e7d32</custom-attribute>
+            <custom-attribute attribute-id="dpBadgeIcon">clock-o</custom-attribute>
+            <custom-attribute attribute-id="dpBadgeText" xml:lang="x-default">Cut-off 4:00 PM</custom-attribute>
+            <custom-attribute attribute-id="dpEyebrow" xml:lang="x-default">Delivery option</custom-attribute>
+            <custom-attribute attribute-id="dpHeading" xml:lang="x-default">Same-day delivery</custom-attribute>
+            <custom-attribute attribute-id="dpIcon">bolt</custom-attribute>
+            <custom-attribute attribute-id="dpImage">images/truck.png</custom-attribute>
+            <custom-attribute attribute-id="dpImageAlt" xml:lang="x-default">Delivery truck on the road</custom-attribute>
+            <custom-attribute attribute-id="dpMessage" xml:lang="x-default">Order before 4:00 PM to get it today</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="delivery-promise-next-day">
+        <display-name xml:lang="x-default">Delivery Promise - NEXT_DAY</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="dpAccentColor">#1f78b4</custom-attribute>
+            <custom-attribute attribute-id="dpBadgeIcon">calendar-check-o</custom-attribute>
+            <custom-attribute attribute-id="dpBadgeText" xml:lang="x-default">Arrives tomorrow</custom-attribute>
+            <custom-attribute attribute-id="dpEyebrow" xml:lang="x-default">Delivery option</custom-attribute>
+            <custom-attribute attribute-id="dpHeading" xml:lang="x-default">Next-day delivery</custom-attribute>
+            <custom-attribute attribute-id="dpIcon">truck</custom-attribute>
+            <custom-attribute attribute-id="dpImage">images/truck.png</custom-attribute>
+            <custom-attribute attribute-id="dpImageAlt" xml:lang="x-default">Delivery truck on the road</custom-attribute>
+            <custom-attribute attribute-id="dpMessage" xml:lang="x-default">Arrives tomorrow if you order today</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="delivery-promise-standard">
+        <display-name xml:lang="x-default">Delivery Promise - STANDARD</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="dpAccentColor">#6c757d</custom-attribute>
+            <custom-attribute attribute-id="dpBadgeIcon">shield</custom-attribute>
+            <custom-attribute attribute-id="dpBadgeText" xml:lang="x-default">Tracked &amp; insured</custom-attribute>
+            <custom-attribute attribute-id="dpEyebrow" xml:lang="x-default">Delivery option</custom-attribute>
+            <custom-attribute attribute-id="dpHeading" xml:lang="x-default">Standard delivery</custom-attribute>
+            <custom-attribute attribute-id="dpIcon">cube</custom-attribute>
+            <custom-attribute attribute-id="dpImage">images/truck.png</custom-attribute>
+            <custom-attribute attribute-id="dpImageAlt" xml:lang="x-default">Delivery truck on the road</custom-attribute>
+            <custom-attribute attribute-id="dpMessage" xml:lang="x-default">Delivered in 3–5 business days</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <!-- Shown when the fulfilment service is slow / failing. Set offline to hide the block instead. -->
+    <content content-id="delivery-promise-fallback">
+        <display-name xml:lang="x-default">Delivery Promise - FALLBACK (service unavailable)</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="dpEyebrow" xml:lang="x-default">Delivery option</custom-attribute>
+            <custom-attribute attribute-id="dpHeading" xml:lang="x-default">Fast, reliable delivery</custom-attribute>
+            <custom-attribute attribute-id="dpIcon">truck</custom-attribute>
+            <custom-attribute attribute-id="dpMessage" xml:lang="x-default">Delivery options and dates are confirmed at checkout</custom-attribute>
+            <custom-attribute attribute-id="dpImage">images/truck.png</custom-attribute>
+            <custom-attribute attribute-id="dpImageAlt" xml:lang="x-default">Delivery truck on the road</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="DeliveryPromiseTier">
+        <display-name xml:lang="x-default">Delivery Promise Tier Mapping</display-name>
+        <description xml:lang="x-default">Maps a fulfilment tier code to its Business Manager content asset.</description>
+        <staging-mode>source-to-target</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="tier">
+            <display-name xml:lang="x-default">Fulfilment Tier</display-name>
+            <type>string</type>
+            <min-length>1</min-length>
+            <field-length>40</field-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="contentAssetId">
+                <display-name xml:lang="x-default">Content Asset ID</display-name>
+                <description xml:lang="x-default">ID of the online delivery promise content asset used for this tier.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <min-length>1</min-length>
+                <field-length>100</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="enabled">
+                <display-name xml:lang="x-default">Enabled</display-name>
+                <description xml:lang="x-default">When disabled, the fallback content is shown for this tier.</description>
+                <type>boolean</type>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="DeliveryPromiseTierMapping">
+                <display-name xml:lang="x-default">Delivery Promise Tier Mapping</display-name>
+                <attribute attribute-id="tier"/>
+                <attribute attribute-id="contentAssetId"/>
+                <attribute attribute-id="enabled"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>

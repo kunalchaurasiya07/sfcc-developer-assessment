@@ -1,0 +1,11 @@
+<div class="delivery-promise__card delivery-promise__card--skeleton" aria-hidden="true">
+    <div class="delivery-promise__body">
+        <span class="delivery-promise__icon delivery-promise__shimmer"></span>
+        <span class="delivery-promise__line delivery-promise__line--eyebrow delivery-promise__shimmer"></span>
+        <span class="delivery-promise__line delivery-promise__line--heading delivery-promise__shimmer"></span>
+        <span class="delivery-promise__line delivery-promise__line--message delivery-promise__shimmer"></span>
+        <span class="delivery-promise__line delivery-promise__line--badge delivery-promise__shimmer"></span>
+    </div>
+    <div class="delivery-promise__media delivery-promise__shimmer"></div>
+</div>
+<span class="visually-hidden">${Resource.msg('label.deliverypromise.loading', 'deliveryPromise', null)}</span>
